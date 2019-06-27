@@ -1,3 +1,5 @@
-<?php 
-$mysqli = mysqli_connect('localhost','root','','pencarian');
+<?php
+
+$mysqli = mysqli_connect('localhost','root','','tiket'); 
+ 
 ?>
