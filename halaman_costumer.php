@@ -57,50 +57,6 @@
 		<?php
 include "koneksi.php";
 
-$query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'liga1' limit 8");?>
-		<div class="single-product-slider">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-6 text-center">
-						<div class="section-title">
-							<h1>LIGA 1</h1>
-							<p>Recomended ticket</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<!-- single product -->
-					<?php if(mysqli_num_rows($query)>0){ ?>
-						<?php
-            while($data = mysqli_fetch_array($query)){
-        ?>
-					<div class="col-lg-3 col-md-6">
-						<div class="single-product">
-							<img class="img-fluid" src="img/product/liga1/<?php echo $data['gambar'];?>" alt="">
-							<div class="product-details">
-								<h6><?php echo $data["partai_pertandingan"];?></h6>
-								<div class="price">
-
-									Rp&nbsp;<h6><?php echo $data["harga_tiket"];?></h6>
-									<!-- <h6 class="l-through">$210.00</h6> -->
-								</div>
-								<div class="prd-bottom">
-
-									<a href="pemesanan.php?kode_pertandingan=<?=$data['kode_pertandingan'];?>&liga= liga 1" class="social-info">
-										<span class="ti-bag"></span>
-										<p class="hover-text">pesan</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php }} ?>
-					</div>
-				</div>
-			</div>
-<?php
-include "koneksi.php";
-
 $query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'liga2' limit 8");?>
 		<div class="single-product-slider">
 			<div class="container">
@@ -129,6 +85,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'liga2' 
 									<!-- <h6 class="l-through">$210.00</h6> -->
 								</div>
 								<div class="prd-bottom">
+
 									<a href="pemesanan.php?kode_pertandingan=<?=$data['kode_pertandingan'];?>&liga= liga 2" class="social-info">
 										<span class="ti-bag"></span>
 										<p class="hover-text">pesan</p>
@@ -137,18 +94,15 @@ $query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'liga2' 
 							</div>
 						</div>
 					</div>
-					<?php }} ?>
+				<?php }} ?>
 					</div>
 				</div>
 			</div>
-		</div>	
-
-		<!-- single product slide -->
 <?php
 include "koneksi.php";
 
 $query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'pialapresiden' limit 8");?>
-	<div class="single-product-slider">
+		<div class="single-product-slider">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-6 text-center">
@@ -176,6 +130,52 @@ $query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'pialapr
 								</div>
 								<div class="prd-bottom">
 									<a href="pemesanan.php?kode_pertandingan=<?=$data['kode_pertandingan'];?>&liga= pialapresiden" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">pesan</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php }} ?>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<!-- single product slide -->
+<?php
+include "koneksi.php";
+
+$query = mysqli_query($koneksi,"SELECT * FROM pertandingan where liga = 'liga1' limit 8");?>
+	<div class="single-product-slider">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>LIGA 1</h1>
+							<p>Recomended ticket</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<!-- single product -->
+					<?php if(mysqli_num_rows($query)>0){ ?>
+						<?php
+            while($data = mysqli_fetch_array($query)){
+        ?>
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="img/product/liga1/<?php echo $data['gambar'];?>" alt="">
+							<div class="product-details">
+								<h6><?php echo $data["partai_pertandingan"];?></h6>
+								<div class="price">
+
+									Rp&nbsp;<h6><?php echo $data["harga_tiket"];?></h6>
+									<!-- <h6 class="l-through">$210.00</h6> -->
+								</div>
+								<div class="prd-bottom">
+									<a href="pemesanan.php?kode_pertandingan=<?=$data['kode_pertandingan'];?>&liga= liga 1" class="social-info">
 										<span class="ti-bag"></span>
 										<p class="hover-text">pesan</p>
 									</a>
