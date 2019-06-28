@@ -9,7 +9,7 @@
     <title>admin</title>
 </head>
 <body>
-<form method="post" action="cari.php">
+<form method="post" action="cari2.php">
  <nav>
     <div class="nav-wrapper">
       <a href="halaman_admin.php" class="brand-logo">ADMIN</a>
@@ -42,11 +42,9 @@
         <th>opsi</th>
     </tr>
     </thead>
- 
-
     <tbody>
         <?php
-        $sql = "SELECT * FROM pemesanan";
+        $sql = "SELECT * FROM pemesanan where liga = 'liga2'";
         $query = mysqli_query($koneksi, $sql);
 
         while($data = mysqli_fetch_array($query)){

@@ -1,4 +1,11 @@
-<?php include 'koneksi.php'; ?>
+<?php include 'koneksi.php';
+$key = $_POST['cari'];
+// echo "Keyword pencarian = $key";
+echo "<br>";
+$result =mysqli_query($koneksi, "SELECT * FROM pemesanan WHERE nama LIKE '%$key%' AND liga='liga2'");
+	// $SQL = mysqli_query($connect,$QueryString); 
+?>
+
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -9,7 +16,7 @@
     <title>admin</title>
 </head>
 <body>
-<form method="post" action="cari.php">
+<form method="post" action="cari2.php">
  <nav>
     <div class="nav-wrapper">
       <a href="halaman_admin.php" class="brand-logo">ADMIN</a>
@@ -42,15 +49,10 @@
         <th>opsi</th>
     </tr>
     </thead>
- 
-
     <tbody>
-        <?php
-        $sql = "SELECT * FROM pemesanan";
-        $query = mysqli_query($koneksi, $sql);
-
-        while($data = mysqli_fetch_array($query)){
-            echo "<tr>";
+ 		<?php
+		while($data = mysqli_fetch_array($result)) {
+				echo "<tr>";
             echo "<td>".$data['id']."</td>";
             echo "<td>".$data['nama']."</td>";
             echo "<td>".$data['klub_b']."</td>";
@@ -67,11 +69,8 @@
             echo "</td>";
 
             echo "</tr>";
-        }
-        ?>
-    </tbody>
-    </table>    
-    <p>total: <?php echo mysqli_num_rows($query) ?> </p>
-    <!-- <h2><a href="logout.php">logout</a></h2> -->
-</body>
-</html>
+			}
+		?>	
+	</table>
+	<!-- <a href="halaman_admin.php">kembali</a> -->
+                    </div></div></div></div></section></body></html>
